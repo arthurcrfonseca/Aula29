@@ -1,0 +1,17 @@
+package br.com.bookstore.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+/**
+ * Único lugar do sistema que sabe a URL do banco.
+ */
+public class ConexaoFactory {
+
+    private static final String URL = "jdbc:sqlite:bookstore.db";
+
+    public static Connection obterConexao() throws SQLException {
+        return DriverManager.getConnection(URL);
+    }
+}
